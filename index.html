@@ -5,13 +5,13 @@
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
   <meta name="description" content="Contrastive Learning, Theory, Class Collapse, Feature Suppression">
-  <meta property="og:title" content="Which Features are Learnt by Contrastive Learning? On the Role of Simplicity Bias in Class Collapse and Feature Suppression (ICML 2023)"/>
-  <meta property="og:description" content="Theoretical paper on contrastive learning investigating class collapse and feature suppression"/>
+  <meta property="og:title" content="Data Selection or Fine-Tuning Vision Language Models via Cross Modal Attention Trajectories"/>
+  <meta property="og:description" content="Theoretical paper on data selection for efficient fine-tuning of Large Vision Language Models"/>
   <meta property="og:url" content="URL OF THE WEBSITE"/>
 
 
-  <meta name="twitter:title" content="Which Features are Learnt by Contrastive Learning? On the Role of Simplicity Bias in Class Collapse and Feature Suppression (ICML 2023)">
-  <meta name="twitter:description" content="Theoretical paper on contrastive learning investigating class collapse and feature suppression">
+  <meta name="twitter:title" content="Data Selection or Fine-Tuning Vision Language Models via Cross Modal Attention Trajectories">
+  <meta name="twitter:description" content="Theoretical paper on data selection for efficient fine-tuning of Large Vision Language Models">
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
   <meta name="twitter:image" content="./static/images/not_all.png" class="is-centered">
   <meta name="twitter:card" content="./static/images/not_all.png" class="is-centered">
@@ -20,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Which Features are Learnt by Contrastive Learning? On the Role of Simplicity Bias in Class Collapse and Feature Suppression</title>
+  <title>Data Selection or Fine-Tuning Vision Language Models via Cross Modal Attention Trajectories</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -48,33 +48,36 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Which Features are Learnt by Contrastive Learning? <br> On the Role of Simplicity Bias in Class Collapse and Feature Suppression</h1>
+            <h1 class="title is-1 publication-title">Data Selection or Fine-Tuning Vision Language Models via Cross Modal Attention Trajectories</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
                 <span class="author-block">
-                  <a href="https://sites.google.com/g.ucla.edu/yihao-xue/home" target="_blank">Yihao Xue</a>,
+                  <a href="https://hsgser.github.io/" target="_blank">Dang Nguyen</a>,
                 </span>
                 <span class="author-block">
-                    <a href="https://sjoshi804.github.io" target="_blank">Siddharth Joshi</a>,
+                    <a href="https://nilayn7.github.io/" target="_blank">Nilay Naharas</a>,
                 </span>
                 <span class="author-block">
-                  Eric Gan,
+                  Nesihan Bulut,
                 </span>
                 <span class="author-block">
-                  <a href="https://sites.google.com/site/pinyuchenpage/home" target="_blank">Pin-Yu Chen</a>,
+                  Mohammadhossein Bateni
                 </span>
                 <span class="author-block">
-                  <a href="http://web.cs.ucla.edu/~baharan/index.htm" target="_blank">Baharan Mirzasoleiman</a>
+                  Vahab Mirrokni,
+                </span>
+                <span class="author-block">
+                  <a href="https://baharanm.github.io/" target="_blank">Baharan Mirzasoleiman</a>,
                 </span>
                   </div>
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">UCLA CS<br> <b>ICML 2023 Oral</b></span>
+                    <span class="author-block">UCLA CS</span>
                   </div>
                   <div class="column has-text-centered">
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://proceedings.mlr.press/v202/xue23d.html" target="_blank"
+                        <a href="" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -83,15 +86,6 @@
                       </a>
                     </span>
 
-                    <span class="link-block">
-                      <a href="https://drive.google.com/file/d/1AGiuEYD9E_4tSbJmHUM6xHhB3tBOhPRx/view" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Poster</span>
-                    </a>
-                  </span>
 
                 <!-- ArXiv abstract Link> 
                 <span class="link-block">
@@ -136,10 +130,10 @@ End teaser video -->
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Contrastive learning (CL) has emerged as a powerful technique for representation learning, with or without label supervision. However, supervised CL is prone to collapsing representations of subclasses within a class by not capturing all their features, and unsupervised CL may suppress harder class-relevant features by focusing on learning easy class-irrelevant features; both significantly compromise representation quality. Yet, there is no theoretical understanding of class collapse or feature suppression at test time. We provide the first unified theoretically rigorous framework to determine which features are learnt by CL. Our analysis indicate that, perhaps surprisingly, bias of (stochastic) gradient descent towards finding simpler solutions is a key factor in collapsing subclass representations and suppressing harder class-relevant features. Moreover, we present increasing embedding dimensionality and improving the quality of data augmentations as two theoretically motivated solutions to feature suppression. We also provide the first theoretical explanation for why, when supervised and unsupervised CL are employed together, higher-quality representations are obtained, even using commonly-used stochastic gradient methods.
+            Data-efficient learning aims to eliminate redundancy in large training datasets by train- ing models on smaller subsets of the most informative examples. While data selection has been extensively explored for vision models and large language models (LLMs), it remains underexplored for Large Vision-Language Models (LVLMs). Notably, none of existing methods can outperform random selection at different subset sizes. In this work, we propose the first principled method for data-efficient instruction tuning of LVLMs. We prove that examples with similar cross-modal attention matrices during instruction tun- ing have similar gradients. Thus, they influence model parameters in a similar manner and convey the same information to the model during training. Building on this insight, we propose XMAS, which clusters examples based on the trajectories of the top singu- lar values of their attention matrices obtained from fine-tuning a small proxy LVLM. By sampling a balanced subset from these clusters, XMAS effectively removes redundancy in large-scale LVLM training data. Extensive experiments show that XMAS can discard 50% of the LLaVA-665k dataset and 85% of the Vision-Flan dataset while fully preserving per- formance of LLaVA-1.5-7B on 10 downstream benchmarks and speeding up its training by 1.2×. This is 30% more data reduction compared to the best baseline for LLaVA-665k.
 
           </p>
-<img src="./static/images/example_cc_fs.png" class="is-centered">
+<img src="./static/images/xmas.png" class="is-centered">
         </div>
       </div>
     </div>
@@ -155,26 +149,16 @@ End teaser video -->
     <h3 class="title is-4">Class Collapse</h3>
       <hr>
       <div class="content has-text-justified">
+        <img src="./static/images/arp_results.png" class="is-centered">
         <p>
-          1. <b> Not all minimizers of the SCL loss exhibit CC, but the minimum norm minimizer does.</b> The key insight is that due to high dimensionality of the model, it has the capacity to minimize the training loss in various ways. While minimizing the training loss implies CC on the training data, it does not necessarily imply CC on the test data. The first figure provides a simplified example illustrating a model that exhibits CC on the training data but not on the test data. This occurs because the model can exploit the specific input noise present in the training data to counteract the subclass information in the embeddings, while this input noise is rarely encountered in the overall distribution due to high dimensionality. The second figure illustrates that the minimum norm minimizer does not align with the subclass feature at all.
+          1. <b> The average relative performance (ARP) of different subsets of (left) LLaVA 665k and (right) Vision-Flan when fine-tuning LLaVA-1.5-7B. Methods that outperform random selection are shown in opaque. XMAS is the only method that surpasses random selection across different budgets on both datasets. MP and HL finetune the target model on full data to find subsets and thus do not yield any speedup.</b>
         </p>
-        <img src="./static/images/not_all.png" class="is-centered">
         <br>
         <img src="./static/images/min_norm.png" class="is-centered">
         <p>
-          2. <b> In SCL, subclasses are learned by (S)GD early in training but unlearned later.</b> The first part is supported by both theoretical and empirical results and the second part is supported by empirical results. The theoretical characterization of the unlearning process remains an important direction for future research. This observation, in conjunction with the previous point (1), prompts us to conjecture that <b>the bias of (S)GD towards simpler solutions, such as the minimum norm solution, leads to the unlearning of subclasses and ultimately results in class collapse (CC).</b>
+          2. <b>  (left) Data reduction to reach 100% Average relative performance (ARP) of LLaVA-1.5-7B on LLaVA 665k. XMAS obtains 30% more data reduction over the best baselines. (middle) ARP ranking of different 10% subsets of LLaVA 665k when fine-tuning LLaVA-1.5-13B. (right) ARP and ratio of total time (selection + training) w.r.t training target model on full dataset for XMAS at different budgets on LLaVA 665k. XMAS reduces training time by a factor of 0.84 (1.2× speedup) to reach 100% ARP. </b>
         </p>
         <img src="./static/images/cc_gd.png" class="is-centered">
-      <h3 class="title is-4">Feature Suppresion</h3>
-      <hr>
-        <p>
-          In UCL, with the min norm inductive bias, we characeterize two scenarios where FS can happen. (a) When there are easy and irrelevant features present, and the embedding size is limited, the model is unable to accommodate all the information from the input space into the embeddings. As a result, it selectively captures only the easiest features, disregarding the harder class-relevant ones. This suggests increasing embedding size as a solution which we validated through experiments. (b) Even with arbitrarily large embedding sizes, FS can still occur in the presence of high-dimensional irrelevant features and the use of imperfect data augmentation that preserves those features. This emphasizes the importance of designing better data augmentation strategy. 
-        </p>
-      <h3 class="title is-4">Joint Loss</h3>
-      <hr>
-        <p>
-          We also theotretically justify using a weighted sum of SCL and UCL losses, showing that it can provably avoid both CC and FS. This result sheds light on the empirical observation of improved performance when joint loss is used. 
-        </p>
       </div>
   </div>
 </div>
@@ -218,7 +202,7 @@ End teaser video -->
 End youtube video -->
 
 <!--BibTex citation -->
-  <section class="section" id="BibTeX">
+  <!-- <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>
@@ -240,7 +224,7 @@ End youtube video -->
         
       </code></pre>
     </div>
-</section>
+</section> -->
 <!--End BibTex citation -->
 
 
